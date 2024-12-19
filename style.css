@@ -1,0 +1,141 @@
+/* Styles globaux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+}
+
+h2 {
+  margin-top: 40px;
+  color: #444;
+}
+
+/* Formulaire */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  flex: 1 1 calc(33.333% - 30px);
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  margin-top: 5px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form input:focus, form select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+form button {
+  flex: 1 1 100%;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #444;
+}
+
+td {
+  color: #555;
+}
+
+tr:hover td {
+  background-color: #f1f1f1;
+}
+
+/* Bouton d'exportation */
+#export-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#export-button:hover {
+  background-color: #218838;
+}
+
+/* Section responsive */
+@media (max-width: 768px) {
+  form label {
+    flex: 1 1 100%;
+  }
+
+  form button {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  #export-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}

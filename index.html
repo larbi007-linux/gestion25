@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion de dépot </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    #export-button { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+    #export-button:hover { background-color: #218838; }
+  </style>
+</head>
+<body>
+
+  <h1>Gestion depot bricoma temara </h1>
+
+  <!-- Formulaire d'ajout de mouvement -->
+  <form id="stock-form">
+    <label>
+      Département:
+      <select id="department" required>
+        <option value="Électricité">Électricité</option>
+        <option value="Luminaire">Luminaire</option>
+        <option value="Jardinage">Jardinage</option>
+        <option value="Sanitaire">Sanitaire</option>
+        <option value="Outillage">Outillage</option>
+        <option value="Peinture">Peinture</option>
+        <option value="Drougrie">Drougrie</option>
+        <option value="Quincaillerie">Quincaillerie</option>
+      </select>
+    </label>
+    <label>
+      Code:
+      <input type="text" id="code" required>
+    </label>
+    <label>
+      Désignation:
+      <input type="text" id="designation" required>
+    </label>
+    <label>
+      Quantité:
+      <input type="number" id="quantity" min="1" required>
+    </label>
+    <label>
+      Action:
+      <select id="action" required>
+        <option value="entrée">Entrée</option>
+        <option value="sortie">Sortie</option>
+      </select>
+    </label>
+    <button type="submit">Ajouter Mouvement</button>
+  </form>
+
+  <!-- Tableau d'affichage des mouvements -->
+  <section id="stock-display">
+    <h2>Liste des Articles</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Département</th>
+          <th>Code</th>
+          <th>Désignation</th>
+          <th>Stock Disponible</th>
+          <th>État</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="stock-table"></tbody>
+    </table>
+  </section>
+
+  <!-- Bouton d'exportation -->
+  <section id="export-section">
+    <button id="export-button">Exporter en Excel</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
